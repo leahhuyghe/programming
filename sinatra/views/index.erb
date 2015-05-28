@@ -1,0 +1,15 @@
+
+<h1>My First Sinatra Application</h1>
+
+<%# this will define a variable called "name" that we can use later on this page but it won't display anything in the browser.  %>
+<% name = "Leah" %>
+
+<%#when using the <%... syntax, it will actually display on the page. You can put any Ruby code in ERB blocks. %>
+
+<% name.upcase.reverse %> <%# This will display 'HAEL' %>
+
+<% if name.length > 10 %>
+  <p>The name is long</p>
+<% else %>
+  <p>The name is short</p>
+<% end %>
