@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML & CSS</title>
+  <meta charset="utf-8">
+  <meta name="keywords" content="html, tutorial, teaching">
+  <meta name="description" content="This is a page about HTML & CSS">
+
+  <link href='style.css' rel="stylesheet"  type="text/css">
+  <link href='normalize.css' rel="stylesheet"  type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <nav>
+  <ul>
+    <button type="button"><a href="https://github.com/leahhuyghe">Fork me on Github ;)</a></button>
+  </ul>
+  <ul>
+    <button type="button"><a href="cookie.html">Learn to make cookies instead →</a></button>
+  </ul>
+  </nav>
+
+  <h1>HTML & CSS are awesome.<h1>
+
+  <h2>Hey, I'm <a href="http://leahhuyghe.com/">Leah</a>, and I made this to convince you to learn to code.</h2>
+
+  <p>I also built this to see how fast I could crank out a landing page. </p>
+
+  <h2>HTML is cool because you can make all kinds of awesome stuff, like ordered lists:</h2>
+
+  <ol>
+    <li>Buy milk</li>
+    <li>Do laundry</li>
+    <li>Take over the world with my MacBook Pro</li>
+  </ol>
+
+  <h2>Perhaps unordered lists are more your thing.</h2>
+  <p>
+  <ul>
+    <li>Pick up drycleaning</li>
+    <li>Deploy to Heroku</li>
+    <li>Get priorities straight</li>
+  </ul>
+</p>
+
+<h2>Do you like tables?</h2>
+  <table border="3" id="table">
+
+    <thead>
+      <tr>
+        <th> Table Header 1 </th>
+        <th> Table Header 2 </th>
+        <th> Table Header 3 </th>
+        <th> Table Header 4 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> Input 1 </td>
+        <td rowspan="2"> rowspan! </td>
+        <td> Input 3 </td>
+        <td> Input 4 </td>
+      </tr>
+      <tr>
+        <td> Input 1 </td>
+        <td colspan="2"> colspan! </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <h3>Tips on using tables:</h3>
+  <ul>
+    <li>Only use tables for tabular data</li>
+    <li>Don't use tables to create layout for regular content -- this is cheating!</li>
+    <li>When using colspan and rowspan, remember to delete the adjacent column / row!</li>
+  </ul>
+
+<h2>I love CSS too.</h2>
+<p>HTML wouldn't be much without CSS. CSS makes HTML beautiful. </p>
+
+<h2>Forms are also possible with HTML.</h2>
+
+<form>
+  <label for="name">Your Name </label>
+  <input id="name" type="text" placeholder="Your Name" autofocus="true"></input>
+  <br>
+  <label for="email">Your Email </label>
+  <input id="email" type="text" placeholder="Your email"></input>
+  <br>
+  <label for="email">Your Favorite Color </label>
+  <input id="color" type="text" placeholder="Color"></input>
+  <br>
+  <label for="message">Your Message </label>
+  <input id="message" type="text" placeholder="Message"></input>
+  <br>
+  <label for="password">Your Password </label>
+  <input id="password" type="password" placeholder=" "></input>
+  <br>
+  <label for="checkbox" type="checkbox">Do you love cookies?</label>
+  <input type="checkbox" id="checkbox">
+  <br>
+  <label for="marketing">Marketing</label>
+  <input type="radio" id="marketing" name="department">
+  <label for="sales">Sales</label>
+  <input type="radio" id="sales" name="department">
+  <label for="engineering">Engineering</label>
+  <input type="radio" id="engineering" name="department">
+    <br>
+  <label for="priority">Priority<label>
+    <select id="priority">
+    <option>Urgent</option>
+    <option>Low Priority</option>
+    <option>911</option>
+
+    </select>
+
+  <br>
+  <input id="submit" type="submit">
+
+</form>
+  <hr>
+
+
+<footer>
+  <center><p>Made with 💙 in Vancouver</p></center>
+  <br>
+  <p><a href="#">Go to top </a></p>
+</footer>
+</body>
+</html>

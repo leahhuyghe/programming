@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>In-Class Apps</title>
+  <meta charset="utf-8">
+
+  <link href='../styles/style.css' rel="stylesheet"  type="text/css">
+  <link href='../styles/normalize.css' rel="stylesheet"  type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
+  <<style>
+    body {
+      background-color: <%= session[:background_color]
+    }
+    </body>
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+
+    <a href="/phrase">Company Mission Statement Generator</a>
+
+    <a href="/questions">Personality Test</a>
+
+    <a href="/calculator">Calculator</a>
+
+  <p>
+  Last Temperature: <%= session[:last_temperature] %></p>
+
+  <p>
+    Visit count: <%= session[:visits] %>
+  </p>
+
+  <form method="post" action="/color">
+    <select name="new_color">
+      <option value="red">Red</option>
+      <option value="blue">blue</option>
+      <option value="green">green</option>
+    </select>
+
+    <input type="submit" value="New background Color">
+    </form>
+  </nav>
+<hr>
+
+  <%= yield %>
+
+
+</body>
+</html>
