@@ -11,9 +11,9 @@
 
 <form method="post" action="/subtraction">
 
-  <input id="input" type="number" value=" <%= @subtract_first_number%> " name="subtract_first_number" style="width: 100px, height: 30px">
+  <input id="input" type="number" value="<%= @subtract_first_number%>" name="subtract_first_number" style="width: 100px, height: 30px">
   -
-  <input id="input" type="number" value=" <%= @subtract_second_number%> " name="subtract_second_number" style="width: 100px, height: 30px">
+  <input id="input" type="number" value="<%= @subtract_second_number%>" name="subtract_second_number" style="width: 100px, height: 30px">
     <input type="submit" value="=">
 
 </form>
@@ -42,8 +42,9 @@
 <h2>Random Number Winner</h2>
 
 <form method="post" action="/random">
-<input id="input" type="text" value=" <%= @random_input%> " name="random_input" style="width=200px, height: 100px">
-<input type="submit" value="Pick at random">
-<form>
 
-  
+<input id="input" type="text" value=" <%= @random_input%> " name="random_input" style="width=200px, height: 100px">
+
+<input type="submit" value="Pick at random">
+
+<form>
