@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+100.times do
+  title = Faker::Company.catch_phrase
+  body = "#{Faker::Company.bs} #{Faker::Company.bs} #{Faker::Company.bs}"
+  Question::create ({title: title, body: body})
+end
