@@ -1,20 +1,29 @@
-// This writes this string to the page.
-document.write("This is another message, also written to the document");
+//The vault
 
-var myName = "Leah";
-var a = 3;
-var b = 4;
-var result = a * b;
+var correctPassword = "opensesame";
+var secret = '712';
 
-var message = "Hello, " + myName + "! Incase you forgot, the result of  " + a + " x " + 4 + " is " + result + '.'
+var willPlay = confirm("Welcome to the safe. Do you want to open it?")
 
-var myName = 
-alert("Welcome to the site, " + myName)
+if (willPlay) {
+  var guessedPassword = prompt("Welcome to the Safe. What is the password?");
 
-confirm("Confirm me")
+  if (guessedPassword === correctPassword) {
+   alert("The secret is " + secret);
+  } else {
+   alert("Wrong! Stop trying to hack me!");
+  }
+} else {
+    alert("OK, fine, don't play then...");
+  }
 
-var userName = prompt("What's your name?")
+// Password Checker
 
-confirm("Thanks, " + userName)
-
-console.log(message)
+var password = prompt("Enter a password no longer than 12 characters and no shorter than 8 characters.")
+  if (password.length > 12 ) {
+  alert("Too long!")
+} else if (password.length < 8) {
+  alert("Too short!")
+} else {
+  alert("Mmm, Just Right!")
+}
