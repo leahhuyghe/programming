@@ -42,10 +42,13 @@ class Question < ActiveRecord::Base
   end
 
 
-  def engineer
-    if title.present? && title.include?("engineer")
-    end
+  def self.search(term)
+    self.where(["body ILIKE ? OR title ILIKE ?", "%#{term}", "#{term}"])
   end
+
+
+
+
 
 
 end
