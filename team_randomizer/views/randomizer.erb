@@ -1,10 +1,25 @@
+<html>
+
 <h2>Team Randomizer</h2>
 <h3>Easily assign a group of students into teams</h3>
 
 <form method="post" action="/randomizer">
+
+ <div>
+ <label for="student_names">Tell me all the names of your student body.</label>
+   <textarea name="student_names" id="student_names" placeholder="Separate names with a comma and space"></textarea>
+ </div>
+ <div>
+ <label for="group_number" name="group_number" id="group_number">How many groups do you want?</label>
+   <input type="number" name="group_number" id="group_number">
+ </div>
+ <div>
+ <input type="submit" value="Generate Groups"></input>
+ </div>
+
   <div>
   <label for="student_names">Tell me all the names of your student body.</label>
-    <textarea name="student_names" id="student_names" placeholder="Separate names by commas"></textarea>
+    <textarea name="student_names" id="student_names" placeholder="Separate names with a comma and space"></textarea>
   </div>
   <div>
   <label for="group_number" name="group_number" id="group_number">How many groups do you want?</label>
@@ -13,10 +28,38 @@
   <div>
   <input type="submit" value="Generate Groups"></input>
   </div>
-</form>
 
-<<<<<<< HEAD
-<%= @error %>
-=======
-<%= @groups %>
->>>>>>> a1e819c6327b5e8fa0b0265dc235a9636e60073c
+</form>
+<br>
+<hr>
+<br>
+<% if @error_result == true %>
+<%=   "Error: You require more teams than you have students listed. Enter more students or reduce number of teams!" %>
+<% end %>
+
+<% if @error_result == nil && session["group_num"] < session["names"].length %>
+<%    (session["group_num"]).downto(1) { |n| %><B>
+<%=       "Student Team" %>
+<%=       n %></b>
+<%=       "has members: " %><i>
+<%=       session[n]   %></i>
+<%=       ", " %> <BR>
+<%        } %>
+<% end %>
+
+
+<% if @error_result == true %>
+<%=   "Error: You require more teams than you have students listed. Enter more students or reduce number of teams!" %>
+<% end %>
+
+<% if @error_result == nil && session["group_num"] < session["names"].length %>
+<%    (session["group_num"]).downto(1) { |n| %>
+<%=       "Student Team" %>
+<%=       n %>
+<%=       "has members: " %>
+<%=       session[n]   %>
+<%=       ", " %> <BR>
+<%        } %>
+<% end %>
+
+</html>

@@ -1,9 +1,8 @@
-nav {
-  display: inline;
-}
+
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
   color: #838383;
   margin: 3em 5em 3em 5em !important;
   background-color: #f0ead6;
@@ -21,12 +20,8 @@ button {
   border-width: 1px solid;
 }
 
-h1, h2, h3 {
-  text-decoration: bold;
-}
-
 h1 {
-  font-size: 72px;
+  font-size: 45px;
   text-align: center;
   color: #8a94f4;
 }
@@ -44,7 +39,7 @@ h3 {
 
 p {
   font-size: 16px;
-  color: #464646;
+  color: #ededed;
 }
 
 table {

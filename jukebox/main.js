@@ -27,3 +27,18 @@ var password = prompt("Enter a password no longer than 12 characters and no shor
 } else {
   alert("Mmm, Just Right!")
 }
+
+
+// Correct number
+
+var correctNumber = 23;
+
+var guess = parseInt(prompt("Guess a number: "));
+if (guess > correctNumber) {
+  alert("Your guess is too big.");
+}  else if (guess < correctNumber) {
+    alert("Your guess is too small.")
+}  else {
+  alert("Great job!")
+  break;
+}
