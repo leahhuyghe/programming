@@ -3,8 +3,8 @@ nav {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #838383;
+  font-family: 'Source Sans Pro';
+  color: #000;
   margin: 3em 5em 3em 5em !important;
   background-color: #f0ead6;
 }
@@ -17,7 +17,7 @@ a {
 button {
   background: #fff;
   color: #838383;
-  border-radius: 15px;
+  border-radius: 5px;
   border-width: 1px solid;
 }
 
@@ -28,7 +28,7 @@ h1, h2, h3 {
 h1 {
   font-size: 72px;
   text-align: center;
-  color: #8a94f4;
+  color: #000;
 }
 
 h2 {
@@ -44,13 +44,10 @@ h3 {
 
 p {
   font-size: 16px;
-  color: #464646;
+  color: #000;
 }
 
-table {
-  margin: 1em;
-  padding: 1em;
-}
+
 
 hr {
     padding: 0;
@@ -76,4 +73,17 @@ form #input {
 footer {
   text-decoration: italic;
   font-size: 10px;
+}
+
+.boxes {
+  background-color: #0f0;
+  border-top: 10px;
+  padding-top: 10px;
+
+}
+
+.inner-box {
+  border-radius: 5px;
+  background-color: orange;
+  margin-left: 20px;
 }
