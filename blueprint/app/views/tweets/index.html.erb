@@ -1,0 +1,13 @@
+<p>hello lookie me tweets
+
+current time: <%= DateTime.now %>
+
+<% @authors_names.each do |name| %>
+<%= name %>
+<% end %>
+</p>
+<p>
+<% @tweets.each do |tweet| %>
+<%= tweet.message %> <br>
+<% end %>
+</p>
