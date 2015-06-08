@@ -1,0 +1,23 @@
+<h1>Editing Request</h1>
+<hr>
+<%= form_for :request, url: request_path(@request), method: :patch do |f| %>
+
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@request.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= render 'requests/form' %>
+
+
+<% end %>

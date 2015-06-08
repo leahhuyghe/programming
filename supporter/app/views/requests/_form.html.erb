@@ -1,0 +1,36 @@
+
+<%= form_for :request, url: requests_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= radio_button_tag(:department, "sales") %><br>
+    <%= label_tag(:department_sales, "Sales")%>
+  </p>
+
+  <p>
+    <%= radio_button_tag(:department, "marketing") %>
+    <%= label_tag(:department_marketing, "Marketing")%>
+  </p>
+
+  <p>
+    <%= radio_button_tag(:department, "technical") %>
+    <%= label_tag(:department_technical, "Technical")%>
+  </p>
+
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

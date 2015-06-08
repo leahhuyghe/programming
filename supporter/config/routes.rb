@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
-  resources :tweets
-
-  root 'tweets#index'
-  get '/tweets' => 'tweets#index'
-  get '/tweets/:id' => 'tweets#show'
-
-
-
+  get 'welcome/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'welcome#index'
+
+   resources :requests
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

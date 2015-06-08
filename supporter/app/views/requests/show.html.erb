@@ -1,0 +1,26 @@
+<body>
+
+  <nav>
+  <%= link_to 'Edit', edit_request_path(@request) %> |
+  <%= link_to 'Back', requests_path %>
+  </nav>
+<hr>
+  <p>
+    <strong>Name:</strong>
+    <%= @request.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @request.email %>
+  </p>
+  <p>
+    <strong>Department:</strong>
+    <%= @request.department %>
+  </p>
+  <p>
+    <strong>Message:</strong>
+    <%= @request.message %>
+  </p>
+
+</body>

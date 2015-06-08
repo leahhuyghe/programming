@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :tweets
+  get 'welcome/index'
 
-  root 'tweets#index'
-  get '/tweets' => 'tweets#index'
-  get '/tweets/:id' => 'tweets#show'
-
-
+  resources :articles
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
