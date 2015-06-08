@@ -1,4 +1,4 @@
-<body>
+
 
   <nav><%= link_to 'New Request', new_request_path %></nav>
 <hr>
@@ -12,7 +12,7 @@
     <th>Message</th>
   </tr>
 
-  <%= @requests.each do |request|  %>
+  <% @requests.each do |request|  %>
     <tr>
       <td><%= request.name %></td>
       <td><a href="mailto:<%= request.email %>">Click to email them</a></td>
@@ -28,5 +28,3 @@
 
   <% end %>
 </table>
-
-</body>

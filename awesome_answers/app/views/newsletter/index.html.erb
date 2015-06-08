@@ -1,0 +1,16 @@
+<h3>Fill out the form below to subscribe to our newsletter.</h3>
+
+<%= form_tag "/newsletter" do %>
+
+<div>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+</div>
+
+<div>
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
+</div>
+
+<%= submit_tag %>
+<% end %>
