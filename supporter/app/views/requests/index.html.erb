@@ -2,6 +2,13 @@
 
   <nav><%= link_to 'New Request', new_request_path %></nav>
 <hr>
+
+<%= form_tag "/search", method: "get" do %>
+   <%= label_tag :f, "Search" %>
+   <%= text_field_tag :f, params[:f] %>
+   <%= submit_tag "Search" %>
+<% end %>
+
 <h1>All Support Requests</h1>
 
 <table>
@@ -24,7 +31,6 @@
               method: :delete,
               data: { confirm: 'Destroy for real?' } %></td>
     </tr>
-
 
   <% end %>
 </table>

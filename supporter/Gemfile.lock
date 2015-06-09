@@ -54,6 +54,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     ffi (1.9.8)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
@@ -69,6 +71,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -152,10 +157,12 @@ DEPENDENCIES
   awesome_print
   byebug
   coffee-rails (~> 4.1.0)
+  faker
   hirb
   interactive_editor
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

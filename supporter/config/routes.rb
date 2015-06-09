@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
    resources :requests
 
-
+   get "/search" => "requests#search"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

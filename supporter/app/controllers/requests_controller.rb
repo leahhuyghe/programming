@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
 
 
-# I ran this in my terminal and it took me forever to figure out the specificity for this, especially radio button.
+# I ran this in my terminal and it took me forever to figure out the specificity for this, especially radio button:
 
 #bin/rails generate model Request name:string email:string department:boolean message:text
 
@@ -53,9 +53,12 @@ class RequestsController < ApplicationController
   end
 end
 
+def search
+    @f = params.permit(:f)
+    @requests = Request.where(["name ilike ? OR message ilike ? OR email ilike ? ", "%#{@f[:f]}%", "%#{@f[:f]}%", "%#{@f[:f]}%"]).paginate(:page => params[:page]).order("done desc")
+  end
 
 private
-
   def request_params
     params.require(:request).permit(:name, :email, :department, :message)
   end
