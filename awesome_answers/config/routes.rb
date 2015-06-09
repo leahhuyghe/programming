@@ -2,6 +2,17 @@
 
 Rails.application.routes.draw do
 
+  resources :questions do
+    # This will make the answers routes have a prefix /questions/:question_id
+    resources :answers, only: [:create, :destroy]
+  end
+
+  resources :answers do
+    # We're doing this to avoid nested resources, because that would result
+    # in a very long URL and very cumbersome.
+    resources :comments
+  end
+
   #this will match a GET request to "/hello"
   #then it will invoke the Welcome Controller with hello action.
   #VERB "url" => "controller_name#action"

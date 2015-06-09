@@ -1,6 +1,14 @@
 #this is our model and it inherits from ActiveRecord::Base which gives us the ORM (Object Relational Mapping) features from the ActiveRecord gem.
 
 class Question < ActiveRecord::Base
+  # This assumes that you have a model called 'answer' and that model has a
+  # field called 'question_id' (this is a Rails convention).
+  # dependent: :destroy means that if you delete a question record, it will delete all the answer records that reference this question (with question_id)
+  # We can also use: dependent: :nullify which will make the question_id value
+  # null to all the answer records that references the question being deleted.
+
+  has_many :answers
+
   #adding validations in here ensures that the records meets those criteria before saving / creating / updating. For instance the record will not insert in the database in here if the title is not present.
   #Passing a Hash to the validation key overrides the default values. So in here the message for presence validation will be "must be provided" instead of "can't be blank"
   validates :title, presence: {message: "must be provided"},
@@ -22,7 +30,8 @@ class Question < ActiveRecord::Base
   #to run on our model. For instance this will give us the three most recent_three
   #questions. We can call it as in : Questions.most_recent
 
-  def self.recent_three, lambda { order("updated_at DESC").limit(3)}
+  def self.recent_three
+    #lambda {order("updated_at DESC").limit(3)} -- don't need this as a self.
     order("updated_at DESC").limit(3)
   end
 
