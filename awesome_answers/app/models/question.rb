@@ -7,7 +7,10 @@ class Question < ActiveRecord::Base
   # We can also use: dependent: :nullify which will make the question_id value
   # null to all the answer records that references the question being deleted.
 
-  has_many :answers
+
+  belongs_to :category
+  
+  has_many :answers, dependent: :destroy
 
   #adding validations in here ensures that the records meets those criteria before saving / creating / updating. For instance the record will not insert in the database in here if the title is not present.
   #Passing a Hash to the validation key overrides the default values. So in here the message for presence validation will be "must be provided" instead of "can't be blank"

@@ -1,0 +1,27 @@
+<h2><%= @recipe.name %><h2>
+<p><%= @recipe.description %></p>
+
+<%= form_for [@recipe, @ingredient] do |f|%>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+</div>
+<%= f.submit %>
+
+<h2>Ingredients</h2>
+
+<ul>
+  <%= @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+    <li><% link_to "Delete", [@recipe, ingredient],
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } 
+        %></li>
+  <% end %>
+</ul>
