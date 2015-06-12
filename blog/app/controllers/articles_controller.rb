@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
 
-  #I haven't added this defs in order.
+  # I haven't added these defs in order.
 
   def index
     @articles = Article.all
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+
   end
 
   def show
@@ -16,9 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
     @article = Article.new(article_params)
-
      # Check if article is saved
       if @article.save
         redirect_to @article
@@ -27,7 +30,7 @@ class ArticlesController < ApplicationController
       end
   end
 
-  #Allow user to update articles
+  # Allow user to update articles
   def update
    @article = Article.find(params[:id])
 
@@ -40,11 +43,11 @@ class ArticlesController < ApplicationController
 
   #Allow user to delete articles
   def destroy
-  @article = Article.find(params[:id])
-  @article.destroy
+    @article = Article.find(params[:id])
+    @article.destroy
 
-  redirect_to articles_path
-end
+    redirect_to articles_path
+  end
 
   private
 
