@@ -1,20 +1,14 @@
-// this one kinda works, manually, if you bruteforce it each second.
-// but nobody got time fo' that!
-// must improve.
-setTimeout(function() {
-  document.write('1')
-  count += 1;
-}, 1000);
+// This is solved, but I didn't really solve it.
 
-
-// this one is just straightup broken and left me pleading on stackoverflow.
-var count = 1;
-  setTimeout(function () {
-    document.write(count);
-    count += 1;
-  }, 1000;
-  print {
-    document.write(10), 10000
-  });
-
-// totally discouraged
+var run = function(start, stop){//Start is 1 and stop is 10
+  var currentPos = start;
+  var loop = function(){
+    setTimeout(function(){
+      document.write(currentPos + "<br/>");
+      if(++currentPos <= stop)
+        loop();
+    }, (currentPos - 1) * 1000);
+  }
+  loop();
+}
+run(1, 10);
