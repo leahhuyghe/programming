@@ -6,7 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <nav>
+    <p>
+      <h2>View Our Full Library of Snippets:</h2>
+    </p>
+    <% @category.each do |category| %>
+    <%= link_to category.name, category_path(category) %>
+    <% end %>
+  </nav>
+
+
 
 <%= yield %>
 

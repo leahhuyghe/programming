@@ -1,21 +1,17 @@
 <%= form_for :snippet, url: categories_path do |f| %>
 
-<p>
-  <%= f.label :category %>
-  <%= f.collection_select :category %>
-</p>
-<p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
 
-<p>
-  <%= f.label :code %>
-  <%= f.text_area :code %>
-</p>
+  <tr>
+    <td><%= f.label :category %></td>
+    <td><%= f.collection_select :category %></td>
 
-<p>
-  <%= f.submit %>
-</p>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
 
+    <td><%= f.label :code %></td>
+    <td><%= f.text_area :code %></td>
+
+    <td><%= f.submit 'Save' %></td>
+
+</tr>
 <% end %>

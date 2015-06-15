@@ -1,0 +1,6 @@
+
+<%= @snippet.each do |f| %>
+  <%= render 'form' %>
+  <%= link_to 'Edit' edit_snippet_path(snippet) %>
+  <%= link_to 'Delete' snippet_path(snippet), method: :delete, data: {confirm: 'Are you sure?'}  %>
+<% end %>
