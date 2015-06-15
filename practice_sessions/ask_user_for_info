@@ -1,0 +1,29 @@
+hash = {}
+
+hash[:cities] = []
+i = 0
+
+puts 'What is your first name?'
+firstname = gets.chomp
+hash[:firstname] = firstname
+
+puts 'What is your last name?'
+lastname = gets.chomp
+hash[:lastname] = lastname
+
+puts 'What is your age?'
+age = gets.chomp
+hash[:age] = age
+
+
+puts 'All the cities you have been to'
+cities = gets.chomp
+
+while city != "done"
+hash[:cities] << cities if cities != "done" || "Done" || "DONE"
+i += 1
+end
+
+puts hash
+
+# should I use Hash.new ??!? sorta works til I hit the cities.
