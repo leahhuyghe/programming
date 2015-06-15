@@ -1,0 +1,21 @@
+<%= form_for :snippet, url: categories_path do |f| %>
+
+<p>
+  <%= f.label :category %>
+  <%= f.collection_select :category %>
+</p>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :code %>
+  <%= f.text_area :code %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
