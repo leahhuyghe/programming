@@ -13,7 +13,7 @@ class SnippetsController < ApplicationController
     if @snippet.save
       redirect_to snippet_path(@snippet)
     else
-      redirect :new
+      render :new
     end
     
   end

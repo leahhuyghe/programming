@@ -35,6 +35,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
+
+  gem "interactive_editor"
+  gem "awesome_print"
+  gem "hirb"
+  gem "faker"
+
+  #https://www.codefellows.org/blog/how-to-create-a-markdown-friendly-blog-in-a-rails-app
+  #two gems for markdown
+  gem 'redcarpet'
+  #gem 'albino'
+  #gem 'nokogiri'
+  gem 'coderay'
+
+  gem 'kaminari'
+
+  gem 'rails-erd'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

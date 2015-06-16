@@ -1,9 +1,12 @@
 
-
-<h2>Your <%= @category %> Snippet</h2>
+<h2>Your <%= @snippet.category.name %> Snippet</h2>
 <br>
-<%= @snippet.name %>
-<%= @snippet.code %>
+<div>
+  <%= @snippet.title %>
+</div>
+<div>
+  <%= markdown(@snippet.code) %>
+</div>
 <br>
-<%= link_to 'Edit Snippet' edit_path %> |
-<%= link_to 'Delete Snippet' delete_path %>
+<%= link_to 'Edit Snippet', edit_snippet_path(@snippet) %> |
+<%= link_to 'Delete Snippet', snippet_path, method: :delete %>

@@ -1,0 +1,16 @@
+<%= form_for :snippet, url: snippets_path do |f| %>
+
+  <tr>
+    <td><%= f.label :category %></td>
+    <td><%= f.collection_select :category_id, Category.all, :id, :name %></td>
+    <br>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td>
+    <br>
+    <td><%= f.label :code %></td>
+    <td><%= f.text_area :code %></td>
+    <br>
+    <td><%= f.submit 'Save' %></td>
+
+</tr>
+<% end %>

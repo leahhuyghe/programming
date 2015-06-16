@@ -1,5 +1,5 @@
 <h2>All Snippets</h2>
 <br>
-<%= @snippet.each do |snippet| %>
-  <% snippet.code, snippet_path(snippet) %>
-<%= end %>
+<% @snippets.each do |snippet| %>
+  <%= link_to snippet.code, snippet_path(snippet) %>
+<% end %>
