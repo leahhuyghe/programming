@@ -1,17 +1,46 @@
-.content-box {
-  width: 80%;
+textarea {
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-left: 0.5em;
 }
 
-
-.column1 {
-  width: 35%;
+table, tr, td {
+  padding: 0.5em;
 }
 
-.column2 {
-  width: 35%;
+label {
+  padding-right: 1em;
+  padding-bottom: 1em;
 }
 
-/* --- BEGIN NORMALIZE.CSS -- */ 
+form {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 350px;
+  padding: 1em;
+}
+
+body {
+  background-color: #f0ead6;
+  padding: 2em;
+}
+
+h1, h2, h3, {
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+a {
+  color: #0077ce;
+  text-decoration: underline;
+}
+
+nav {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* --- BEGIN NORMALIZE.CSS -- */
 
 html {
   font-family: sans-serif; /* 1 */

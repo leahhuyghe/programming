@@ -10,11 +10,17 @@
 <body>
   <nav>
     <p>
-      <h2>View Our Full Library of Snippets:</h2>
+      <p>View Our Full Library of Snippets</p>
+      <% listcategory.each do |category| %>
+      <%= link_to "#{category.name}", category_path(category)  %>
+      <% end %>
     </p>
-    <%#@categories.each do |category| %>
-    <%#link_to category.name, category_path(category) %>
-    <%#end %>
+
+    <%= link_to "Create Snippet", new_snippet_path %> |
+    <%= link_to "All Snippets", snippets_path %>
+
+
+    <hr>
   </nav>
 
 

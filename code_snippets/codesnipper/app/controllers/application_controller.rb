@@ -3,16 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  ##TODO get code syntax working
+  ## To do: get code syntax working
 	class CodeRayify < Redcarpet::Render::HTML
 	  def block_code(code)
 	    #CodeRay.scan(code, language).div
       CodeRay.scan(code, :ruby).div(:line_numbers => :table)
 	  end
 	end
-	
+
 	def markdown(text)
-	  coderayified = CodeRayify.new(:filter_html => true, 
+	  coderayified = CodeRayify.new(:filter_html => true,
 	                                :hard_wrap => true)
 	  options = {
 	    :fenced_code_blocks => true,
@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
 	  markdown_to_html.render(text).html_safe
 	end
 
-  helper_method :markdown
+  def listcategory
+    c = Category.all
+  end
+
+  helper_method :markdown, :listcategory
 
 end

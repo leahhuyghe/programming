@@ -1,0 +1,56 @@
+<html>
+ <head>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+   <script>
+     var pickTeams = function(players, numberOfTeams) {
+       var teams = [];
+
+       for (var i=0; i < numberOfTeams; i += 1) {
+         teams.push([]);
+       }
+
+       players = _.shuffle(players);
+
+       for (i=0; i < players.length; i += 1) {
+         var teamIndex = i % numberOfTeams;
+         teams[teamIndex].push(players[i]);
+       }
+
+       return teams;
+     };
+
+     // Usage example.
+     // pickTeams(['John', 'Paul', 'Mary', 'MoonDog', 'Earl'], 2);
+
+     $(document).ready(function() {
+       $('button').on('click', function() {
+         var players = $('textarea').val().split('\n');
+         var numTeams = parseInt($('input').val());
+         var teams = pickTeams(players, numTeams);
+         var teamsString = JSON.stringify(teams);
+
+         $('#teams').html(teamsString);
+       });
+     });
+   </script>
+ </head>
+ <body>
+   <h1>Team Picker</h1>
+   <label>Enter player names:</label>
+   <textarea cols="20" rows="10"></textarea>
+
+   <br/>
+   <label>Enter number of teams:</label>
+   <input type="text" />
+
+   <br>
+   <button>Make Teams!!</button>
+
+   <hr>
+
+   <div id="teams">Click above to form teams...</div>
+
+ </body>
+</html>
