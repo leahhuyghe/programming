@@ -1,4 +1,13 @@
-<%= form_for :snippet, url: snippets_path do |f| %>
+<% if @snippet.errors.any? %>
+    <ul>
+    <% @snippet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%# form_for :snippet, url: snippet_path(@snippet), method: :patch do |f| %>
+<%= form_for @snippet do |f| %>
 
   <tr>
     <td><%= f.label :category %></td>
