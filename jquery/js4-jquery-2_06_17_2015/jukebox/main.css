@@ -1,0 +1,29 @@
+#song-queue {
+  list-style:none;
+  padding-left: 0;
+  min-height: 150px;
+  border: 2px dashed #282828;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#song-queue li {
+  border-color: #282828;
+  margin-bottom: 20px;
+  background-color: #222222;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+#song-form input[name="notes"] {
+  max-width: 500px;
+  margin-right: 1em;
+  float: left;
+}
+
+#play-button {
+  float: right;
+}
