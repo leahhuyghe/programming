@@ -1,7 +1,13 @@
 class SnippetsController < ApplicationController
   before_action :find_snippet, except: [:index, :new, :create]
   def index
-    @snippets = Snippet.all
+    #@snippets = Snippet.all
+    if (params[:search] && params[:category_id])
+      #byebug
+      @snippets = Snippet.search(params[:search], params[:category_id].first)
+    else
+      @snippets = Snippet.all.page(params[:page])
+    end
   end
 
   def new
