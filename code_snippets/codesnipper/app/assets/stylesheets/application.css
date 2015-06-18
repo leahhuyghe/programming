@@ -2,27 +2,48 @@ textarea {
   margin: 0 auto;
   padding-top: 1em;
   padding-left: 0.5em;
+
 }
 
-table, tr, td {
-  padding: 0.5em;
+button {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
+
+thead {
+  align-content: center;
+}
+
+table {
+
+  width: 700px;
+}
+
 
 label {
-  padding-right: 1em;
-  padding-bottom: 1em;
+  padding-right: 0.5em;
 }
 
 form {
   border-radius: 10px;
-  border: 1px solid black;
-  width: 350px;
+
   padding: 1em;
 }
 
 body {
   background-color: #f0ead6;
   padding: 2em;
+}
+
+.snippet-title {
+  font-size: 18px;
+  font-family: Inconsolata;
+  font-weight: bolder;
+}
+
+.code {
+  font-size: 14px;
+  font-family: Inconsolata;
 }
 
 h1, h2, h3, {
@@ -33,17 +54,36 @@ h1, h2, h3, {
 a {
   color: #0077ce;
   text-decoration: underline;
+  font-weight: bold;
+}
+
+.logo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.view-library {
+  float: left;
+}
+
+.search {
+  float: right;
+}
+
+.create-all-home {
+  text-align: center;
+  margin: 0 auto;
 }
 
 nav {
-  text-align: center;
   font-size: 14px;
+  padding-bottom: 30px;
 }
 
 /* --- BEGIN NORMALIZE.CSS -- */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: Helvetica, sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }

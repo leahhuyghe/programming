@@ -9,17 +9,25 @@
 <%# form_for :snippet, url: snippet_path(@snippet), method: :patch do |f| %>
 <%= form_for @snippet do |f| %>
 
+<table>
   <tr>
-    <td><%= f.label :category %></td>
-    <td><%= f.collection_select :category_id, Category.all, :id, :name %></td>
-    <br>
-    <td><%= f.label :title %></td>
-    <td><%= f.text_field :title %></td>
-    <br>
-    <td><%= f.label :code %></td>
-    <td><%= f.text_area :code %></td>
-    <br>
-    <td><%= f.submit 'Save' %></td>
+    <th>
+      <%= f.label :category %>
+    </th>
+    <th>
+      <%= f.label :title %>
+    </th>
+    <th>
+      <%= f.label :code %>
+    </th>
+  </tr>
 
+  <tr>
+    <td><%= f.collection_select :category_id, Category.all, :id, :name %></td>
+    <td><%= f.text_field :title %></td>
+    <td><%= f.text_area :code %></td>
+    <td><%= f.submit 'Save' %></td>
+  </tr>
+</table>
 </tr>
 <% end %>

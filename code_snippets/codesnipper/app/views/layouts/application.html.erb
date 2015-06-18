@@ -2,39 +2,52 @@
 <html>
 <head>
   <title>Codesnipper</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <nav>
+<nav>
+  <div class="logo">
+    <%= image_tag("codelogo.png") %>
+  </div>
+  <div class="view-library">
     <p>
-      <p>View Our Full Library of Snippets</p>
+      <p>View Our Full Library of Snippets:</p>
       <% listcategory.each do |category| %>
       <%= link_to "#{category.name}", category_path(category)  %>
       <% end %>
     </p>
+  </div>
 
+<div class="search">
+  <%= form_tag(snippets_path, :method => "get") do %>
+      <div>
+        <%= text_field_tag :search, params[:search], placeholder: "Search for a snippet" %>
+        <% all_options = '<option value="0">All</option>'.html_safe %>
+        <%= select_tag :category_id,
+          all_options+options_from_collection_for_select(Category.all,
+                                                         :id, :name,
+                                                         params[:category_id])%>
+        <button type="submit">Search</button>
+      </div>
+  <% end %>
+
+
+</div>
+<br>
+<br>
+<div class="create-all-home">
     <%= link_to "Create Snippet", new_snippet_path %> |
     <%= link_to "All Snippets", snippets_path %> |
-    <%= link_to "Home", root_path %>
-    
-		<%= form_tag(snippets_path, :method => "get") do %>
-		    <div>
-          <%= text_field_tag :search, params[:search], placeholder: "search code" %>
-          <% all_options = '<option value="0">All</option>'.html_safe %> 
-          <%= select_tag :category_id, 
-            all_options+options_from_collection_for_select(Category.all, 
-                                                           :id, :name, 
-                                                           params[:category_id])%>
-		      <button type="submit">Search</button>
-		    </div>
-		<% end %>
+    <%= link_to "Languages", root_path %>
+</div>
 
-    <hr>
   </nav>
-
+<hr>
 
 
 <%= yield %>
