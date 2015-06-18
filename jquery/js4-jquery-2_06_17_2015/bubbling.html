@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+      div {
+        border: 2px solid black;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      #inner-div {
+        width: 100px;
+        height: 60px;
+        margin-left: 20px;
+        margin-top: 20px;
+        text-align: center;
+        padding-top: 40px;
+        background-color: red;
+      }
+
+      #middle-div {
+        width: 150px;
+        height: 150px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: yellow;
+      }
+
+      #outer-div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+
+    </style>
+
+    <script>
+      $(document).ready(function() {
+        $('div, body').on('click', function () {
+          var id = $(this).attr('id')
+          console.log(id, 'clicked');
+        });
+      });
+    </script>
+  </head>
+
+  <body id='body'>
+    <div id='outer-div'>
+      <div id='middle-div'>
+        <div id='inner-div'>
+          Click Me!
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
