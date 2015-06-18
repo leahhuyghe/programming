@@ -1,0 +1,10 @@
+<h1>All Questions</h1>
+
+<%# this looks through the @questions which is like an Array
+    then we can display a line per question %>
+<% @questions.each do |question| %>
+  <%= link_to question.title, question_path(question) %>
+  <hr>
+<% end %>
+
+<%= paginate @questions %>

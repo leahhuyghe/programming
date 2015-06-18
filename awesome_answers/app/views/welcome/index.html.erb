@@ -1,0 +1,13 @@
+<h1>Welcome to Awesome Answers</h1>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %>
+<% end %>
+
+<%# This will create an <img> element with the proper genertaed fingerprint
+    using the Rails assets pipeline %>
+<%= image_tag "yushadha.jpg", class: "main-image img-rounded" %>
+
+<p>
+  Hello World
+</p>

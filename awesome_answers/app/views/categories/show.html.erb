@@ -1,0 +1,7 @@
+<h1>Category: <%= @category.name %></h1>
+<p>There are <%= @questions.length %> questions</p>
+<% @questions.each do |question| %>
+  <div>
+    <%= link_to question.title, question_path(question) %>
+  </div>
+<% end %>

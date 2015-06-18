@@ -1,0 +1,29 @@
+<% if @question.errors.any? %>
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @question do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%# This generates a dropdown menu the option tags will have a value
+        which is the id of the cateogry. The content will be the name
+        of the category.
+        Info about this helper can be found here:
+        http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-collection_select
+      %>
+    <%= f.collection_select :category_id, Category.all, :id, :name  %>
+  </div>
+  <%= f.submit "Submit Question" %>
+<% end %>
