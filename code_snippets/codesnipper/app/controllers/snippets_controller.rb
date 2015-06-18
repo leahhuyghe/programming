@@ -3,8 +3,7 @@ class SnippetsController < ApplicationController
   def index
     #@snippets = Snippet.all
     if (params[:search] && params[:category_id])
-      #byebug
-      @snippets = Snippet.search(params[:search], params[:category_id].first)
+      @snippets = Snippet.search(params[:search], params[:category_id])
     else
       @snippets = Snippet.all.page(params[:page])
     end
