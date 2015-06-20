@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  # Check if the article has a title and at least 5 characters
+  has_many :comments, dependent: :destroy
   validates :title, presence: true,
                     length: { minimum: 5 }
 end

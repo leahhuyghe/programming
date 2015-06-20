@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  http_basic_authenticate_with name: "Leah", password: "secret", except: [:index, :show]
+
   # I haven't added these defs in order.
 
   def index
