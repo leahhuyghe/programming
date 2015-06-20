@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
+
+  before_action :authenticate_user!, except: [:index, :show]
+
   http_basic_authenticate_with name: "Leah", password: "secret", except: [:index, :show]
 
   # I haven't added these defs in order.
@@ -9,13 +13,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
-
+    # @article = Article.find(params[:id])
   end
 
   def show
-    # This is a class! Always singular, capitalized!
-    @article = Article.find(params[:id])
+
   end
 
   def new
@@ -47,7 +49,6 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to articles_path
   end
 
@@ -56,6 +57,10 @@ class ArticlesController < ApplicationController
   # Prevent users from accessing this method
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
   end
 
 end

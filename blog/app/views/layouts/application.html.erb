@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<% if current_user %>
+Hello <%= current_user.first_name %>
+<%= link_to "Log Out", sessions_path, method: :delete,
+        data: { confirm: "Are you sure you want to log out?" }%>
+<% else %>
+  <%= link_to "Log In", new_session_path %> |
+  <%= link_to "Sign up", new_user_path %>
+
+  <% end %>
+
+
 <%= yield %>
 
 </body>
