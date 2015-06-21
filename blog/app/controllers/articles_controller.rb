@@ -52,11 +52,13 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+
   private
 
   # Prevent users from accessing this method
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, {tag_ids: []})
+
   end
 
   def find_article
