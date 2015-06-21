@@ -14,5 +14,35 @@
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
+<div class="votes">
+
+
+<h3>Vote!</h3>
+
+<% if @vote.nil? %>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
+                  article_votes_path(@article, {vote: {is_up: true}}), method: :post %>
+    <br>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
+                  article_votes_path(@article, {vote: {is_up: false}}), method: :post %>
+  <% elsif @vote.is_up? %>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting vote-active'></i>".html_safe,
+                  article_vote_path(@article, @vote), method: :delete %>
+    <br>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
+                article_vote_path(@article, @vote, {vote: {is_up: false}}), method: :patch %>
+  <% else %>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
+                  article_vote_path(@article, @vote, {vote: {is_up: true}}), method: :patch %>
+    <br>
+    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting vote-active'></i>".html_safe,
+                  article_vote_path(@article, @vote), method: :delete %>
+  <% end %>
+</div>
+
+<hr>
+
+
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

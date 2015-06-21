@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    @vote = @article.vote_for(current_user)
   end
 
   def new
@@ -64,5 +64,7 @@ class ArticlesController < ApplicationController
   def find_article
     @article = Article.find(params[:id])
   end
+
+
 
 end
