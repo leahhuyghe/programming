@@ -1,6 +1,6 @@
-<h2>All Ideas</h2>
+<h2>All Ideas &nbsp; <%= link_to 'Create a New Idea', new_idea_path, class: "btn btn-success" %></h2>
 
-<%= link_to 'Create a New Idea', new_idea_path %>
+
 
 <table>
   <tr>
@@ -14,11 +14,10 @@
       <td><h4><%= idea.title %></h4></td>
 
       <td><%= idea.text %></td>
-      <td>&nbsp;<%= link_to 'Show', idea_path(idea) %> | &nbsp;</td>
-      <td> <%= link_to ' Edit', edit_idea_path(idea) %> | &nbsp;</td>
-      <td> <%= link_to ' Destroy', idea_path(idea),
+      <td><%= link_to 'Show', idea_path(idea), class: "btn btn-info" %> &nbsp;<%= link_to ' Edit', edit_idea_path(idea), class: "btn btn-info"  %> &nbsp;<%= link_to ' Destroy', idea_path(idea),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
+
     </tr>
   <% end %>
 </table>
