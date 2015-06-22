@@ -21,8 +21,8 @@
 <h4>Add a comment:</h4>
 <%= render 'comments/form' %>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= link_to 'Edit', edit_idea_path(@idea), class: "btn btn-primary" %> |
+<%= link_to 'Back', ideas_path, class: "btn btn-primary" %>
 </div>
 
 <div class="members">
@@ -30,3 +30,14 @@
   <p><%= @user_idea_id %><p>
   <p><%= @collaborating_user_ids %></p>
 </div>
+
+
+
+
+<p>Liked <%= @idea.likes.count %>times</p>
+
+<% if @idea.liked_by?(current_user) %>
+ <%= link_to "Un-Like", idea_like_path(@idea, @like), method: :delete %>
+<% else %>
+ <%= link_to "Like", idea_likes_path(@idea), method: :post %>
+<% end %>

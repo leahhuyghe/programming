@@ -31,8 +31,10 @@ class IdeasController < ApplicationController
 
   end
 
+  #like object for the @idea with the current_user
   def show
     @idea = Idea.find(params[:id])
+    @like = @idea.like_for(current_user)
   end
 
   def update
@@ -50,6 +52,8 @@ class IdeasController < ApplicationController
     @idea.destroy
     redirect_to ideas_path
   end
+
+
 
 
 private

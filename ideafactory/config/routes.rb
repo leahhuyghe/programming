@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :ideas do
       resources :comments
+      resources :likes, only: [:create, :destroy]
   end
 
 
@@ -21,8 +22,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-  
+
   resources :sessions
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
