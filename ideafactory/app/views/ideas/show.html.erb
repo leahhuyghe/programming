@@ -1,0 +1,32 @@
+<div class="idea-title">
+  <h3><%= @idea.title %></h3>
+</div>
+
+<div class="idea-body">
+  <p>
+    <%= @idea.text %>
+  </p>
+</div>
+<div class="idea-comments">
+  <p>
+  <h4>Comments on this Idea</h4>
+  <%= render @idea.comments %>
+  </p>
+</div>
+
+<br><br>
+<hr>
+
+<div class="add-comment">
+<h4>Add a comment:</h4>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
+</div>
+
+<div class="members">
+  <h4>Members of this Idea</h4>
+  <p><%= @user_idea_id %><p>
+  <p><%= @collaborating_user_ids %></p>
+</div>

@@ -1,0 +1,29 @@
+/*
+
+ *= require_tree .
+ *= require_self
+ */
+ body {
+   padding: 4em;
+ }
+
+ nav {
+   float: right;
+ }
+
+.idea-body {
+  float: left;
+}
+
+.idea-comments {
+  float: right;
+}
+
+.idea-title {
+  text-align: center;
+}
+
+a {
+  color: #4ff4a2;
+  font-weight: 600;
+}

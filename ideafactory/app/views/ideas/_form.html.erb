@@ -1,0 +1,36 @@
+<%= form_for @idea do |f| %>
+
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@idea.errors.count, "error") %> prohibited
+        this idea from being saved:
+      </h2>
+      <ul>
+        <% @idea.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+
+  <hr>
+
+
+  <%= f.label :collaborating_user_ids %>
+      <%= f.collection_check_boxes :collaborating_user_ids, User.where(["id != ?", current_user.id]), :id, :first_name  %>
+
+                                    <p>
+                                      <%= f.submit "Submit", class: "btn btn-success" %>
+                                    </p>
+<% end %>
