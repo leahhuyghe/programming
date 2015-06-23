@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
 
-  http_basic_authenticate_with name: "leah", password: "secret", except: [:index, :show]
-
   def create
    @idea = Idea.find(params[:idea_id])
    @comment = @idea.comments.create(comment_params)

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap Fun 2!</title>
+    <script type="text/javascript">
+    $('#myTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    })
+
+    $('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+    $('#myTabs a:first').tab('show') // Select first tab
+    $('#myTabs a:last').tab('show') // Select last tab
+    $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed
+    </script>
+
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="navbar-brand">
+        Github logo
+      </div>
+    </nav>
+
+<div class="nav nav-tabs col-md-12">
+  <ul class="nav nav-tabs col-md-12">
+    <li class="nav nav-tabs">Notifications</li>
+  </ul>
+
+  <div class="container">
+    <div class="col-md-4">
+      <div class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#">Unread</a></li>
+        <li role="presentation"><a href="#">Participating</a></li>
+        <li role="presentation"><a href="#">All Notifications</a></li>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-4">
+      <div class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#">CodeCoreYVR/my-bo...</a></li>
+        <li role="presentation"><a href="#">CodeCoreYVR/other...</a></li>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        CodeCoreYVR/my-books-react
+      </div>
+      <div class="panel-body">
+        Hello here is an issue
+      </div>
+    </div>
+</div>
+
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        CodeCoreYVR/january-2015-fundamentals
+      </div>
+      <div class="panel-body">
+        Hi There this is a notification
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+  </body>
+  </html>

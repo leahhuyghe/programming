@@ -13,6 +13,9 @@ def like_for(user)
   likes.find_by_user_id(user)
 end
 
+def liked_by?(user)
+  users.include? user
+end
 
 
 end

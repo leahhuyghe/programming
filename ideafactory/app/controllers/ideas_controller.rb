@@ -53,15 +53,11 @@ class IdeasController < ApplicationController
     redirect_to ideas_path
   end
 
-
-
-
 private
 
   def idea_params
     params.require(:idea).permit(:title, :text)
   end
-
 
 
 end
