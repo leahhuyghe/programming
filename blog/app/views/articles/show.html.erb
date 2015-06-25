@@ -1,48 +1,60 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="col-md-8">
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<% if @article.image.present? %>
+<%= image_tag article.image.url(:thumb) %>
+<% end %>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+  <div class="col-md-4">
+    <%= image_tag @article.image.url %>
+  </div>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
 
-<div class="votes">
+  <p>
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </p>
+
+  <h2>Comments</h2>
+  <%= render @article.comments %>
+
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+
+  <div class="votes">
 
 
-<h3>Vote!</h3>
+  <h3>Vote!</h3>
 
-<% if @vote.nil? %>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
-                  article_votes_path(@article, {vote: {is_up: true}}), method: :post %>
-    <br>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
-                  article_votes_path(@article, {vote: {is_up: false}}), method: :post %>
-  <% elsif @vote.is_up? %>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting vote-active'></i>".html_safe,
-                  article_vote_path(@article, @vote), method: :delete %>
-    <br>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
-                article_vote_path(@article, @vote, {vote: {is_up: false}}), method: :patch %>
-  <% else %>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
-                  article_vote_path(@article, @vote, {vote: {is_up: true}}), method: :patch %>
-    <br>
-    <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting vote-active'></i>".html_safe,
-                  article_vote_path(@article, @vote), method: :delete %>
-  <% end %>
+  <% if @vote.nil? %>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
+                    article_votes_path(@article, {vote: {is_up: true}}), method: :post %>
+      <br>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
+                    article_votes_path(@article, {vote: {is_up: false}}), method: :post %>
+    <% elsif @vote.is_up? %>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-top voting vote-active'></i>".html_safe,
+                    article_vote_path(@article, @vote), method: :delete %>
+      <br>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting'></i>".html_safe,
+                  article_vote_path(@article, @vote, {vote: {is_up: false}}), method: :patch %>
+    <% else %>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-top voting'></i>".html_safe,
+                    article_vote_path(@article, @vote, {vote: {is_up: true}}), method: :patch %>
+      <br>
+      <%= link_to "<i class='glyphicon glyphicon-triangle-bottom voting vote-active'></i>".html_safe,
+                    article_vote_path(@article, @vote), method: :delete %>
+    <% end %>
+  </div>
+
+  <hr>
+
+
+
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+
 </div>
-
-<hr>
-
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

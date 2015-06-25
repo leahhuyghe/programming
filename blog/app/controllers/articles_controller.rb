@@ -4,8 +4,6 @@ class ArticlesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
 
-  http_basic_authenticate_with name: "Leah", password: "secret", except: [:index, :show]
-
   # I haven't added these defs in order.
 
   def index
@@ -13,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    # @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def show
@@ -57,7 +55,7 @@ class ArticlesController < ApplicationController
 
   # Prevent users from accessing this method
   def article_params
-    params.require(:article).permit(:title, :text, {tag_ids: []})
+    params.require(:article).permit(:title, :image, :text, {tag_ids: []})
 
   end
 

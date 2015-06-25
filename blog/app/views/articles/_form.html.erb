@@ -1,4 +1,4 @@
-<%= form_for :article, url: articles_path do |f| %>
+<%= form_for :article, url: articles_path, multiport: true do |f| %>
 <!-- Check if there are any errors in the blog post and title (did the user do anything illegal like write a 2-character title) -->
 
   <% if @article.errors.any? %>
@@ -17,7 +17,6 @@
 
 <div class="form-group">
 
-
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -26,9 +25,13 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
-
-  <%= f.label :tag_ids %>
-  <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name  %>
+  <p>
+    <%= f.label :tag_ids %>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name  %>
+  </p>
+  <p>Attach an image:
+      <%= f.file_field :image %>
+  </p>
   <p>
     <%= f.submit "Submit Blog Post", class: "btn btn-primary" %>
   </p>
