@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+$(document).ready(function() {
+
+    $('#list-item-1').slideUp(1000, function() {
+      $('#list-item-2').slideUp(1000, function() {
+        $('#list-item-3').slideUp(1000), function() {
+
+        }
+      });
+    });
+});
+      </script>
+
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+      <style>
+      #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+      #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+      #sortable li span { position: absolute; margin-left: -1.3em; }
+      </style>
+      <script>
+      $(function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+      });
+      </script>
+
+
+
+    <style>
+
+      #rocket.big {
+        width: 200px;
+      }
+
+      #rocket {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width:50px;
+      }
+
+      #list-item-1.classyred {
+        border-color: red !important;
+      }
+
+      .classyred {
+        border-color: red !important;
+      }
+
+      ul {
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        margin-right: 10px;
+        border: 1px dashed #666;
+        min-height: 100px;
+      }
+
+      li {
+        border: 10px solid #666;
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 5px;
+        background-color: #2980b9;
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+      }
+
+      /* Your Styles Here */
+
+    </style>
+
+    <script>
+      $(document).ready(function() {
+
+        // Your Scripts Here
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <ul id="list-1" class="sortable">
+      <li id="list-item-1">1</li>
+      <li id="list-item-2">2</li>
+      <li id="list-item-3">3</li>
+      <li id="list-item-4">4</li>
+    </ul>
+
+    <ul id="list-2" class="sortable">
+      <li id="list-item-5">5</li>
+      <li id="list-item-6">6</li>
+      <li id="list-item-7">7</li>
+      <li id="list-item-8">8</li>
+    </ul>
+
+    <button id='button-1'>Button 1</button>
+    <button id='button-2'>Button 2</button>
+
+    <img id="rocket" src="rocket.png"/>
+
+  </body>
+
+</html>

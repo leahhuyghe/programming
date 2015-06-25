@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <style>
+      body {
+        background-color: black;
+        height: 2000px;
+      }
+
+      #container {
+        background-color: red;
+        width: 400px;
+        height: 400px;
+        /*position: relative;*/
+      }
+
+      #box {
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        /*top: 10px;*/
+        /*position: inherit; */ /* inherit, static, relative, fixed, absolute
+        /*bottom: 0;*/
+        /*right: 0;*/
+      }
+
+      #box.starred {
+        background-color: yellow;
+        border: 10px solid purple;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id='container'>
+      <div id='box'>
+      </div>
+    </div>
+
+  </body>
+</html>

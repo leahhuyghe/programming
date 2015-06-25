@@ -1,0 +1,2 @@
+module FaqsControllerHelper
+end

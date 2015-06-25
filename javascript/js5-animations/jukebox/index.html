@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/cyborg/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="player.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="page-header">JukeBox</h1>
+
+      <div class="row">
+
+        <!-- Playlist -->
+        <section class="playlist col-md-6">
+          <h2>Playlist</h2>
+          <ul id="playlist-list"></ul>
+          <a id="play-button" href="#" class="btn btn-primary btn-block btn-lg">Play All</a>
+        </section>
+
+        <!-- Library -->
+        <section class="library col-md-6">
+          <h2><input type="text" id="filter-library" class="form-control" placeholder="Filter..."/>Library</h2>
+          <ul id="library-list"></ul>
+        </section>
+
+      </div>
+
+      <!-- Messages -->
+      <div id="message" class="alert alert-info">
+        <h4>Welcome to Jukebox!</h4>
+        <p>Add some songs to the Playlist to start listening.</p>
+      </div>
+
+    </div>
+  </body>
+
+</html>

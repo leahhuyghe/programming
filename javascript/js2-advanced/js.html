@@ -1,0 +1,48 @@
+<html>
+ <head>
+
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+   <script>
+     var chooseTeams = function (players, numberOfTeams) {
+     var randomizedPlayers = _.shuffle(players);
+
+     var teams = [];
+     for (var i = 0; i < numberOfTeams; i += 1) {
+       teams.push([]);
+     }
+
+     for (i = 0; i < randomizedPlayers.length; i += 1) {
+       var teamIndex = i % numberOfTeams;
+       teams[teamIndex].push(randomizedPlayers[i]);
+     }
+
+     return teams;
+   };
+
+   chooseTeams(['Mitch', 'Zac', 'Sandra', 'Jenny', 'Thomas'], 2);
+
+   </script>
+
+
+
+<script type="text/javascript">
+
+
+
+setTimeout(function() {
+  document.write("Loading")
+}, 2000;
+print {
+  document.write("Hello World"), 4000
+}
+
+
+</script>
+ </head>
+ <body>
+
+
+
+ </body>
+</html>
