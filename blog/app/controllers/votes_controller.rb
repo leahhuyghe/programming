@@ -4,7 +4,8 @@ class VotesController < ApplicationController
   def create
     article = Article.find params[:article_id]
     vote    = current_user.votes.new(vote_params)
-    vote.article = article
+    # vote.article = article
+    vote.save
     if vote.save
       redirect_to article, notice: "Voted!"
     else

@@ -1,0 +1,8 @@
+Hello <%= @post.user.full_name %>,
+
+<%= @user.full_name.capitalize %> has just liked your post titled: <%= @post.title %>.
+
+Click <%= link_to "here", post_url(@post) %> to view your post.
+Regards,
+
+Lil' Blog Team

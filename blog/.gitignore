@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the personal email / password info in the app_keys.rb file.
+/config/initializers/app_keys.rb
