@@ -12,4 +12,3 @@ namespace :generate_articles_with_comments do
       end
     end
   end
-end

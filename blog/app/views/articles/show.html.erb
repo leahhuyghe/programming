@@ -53,6 +53,17 @@
   <hr>
 
 
+  <p>Liked <%= @article.likes.count %> times</p>
+
+  <% if @article.liked_by?(current_user) %>
+    <%= link_to "Un-Like", article_like_path(@article, @like), method: :delete %>
+  <% else %>
+
+    <%= link_to "Like", article_likes_path(@article), method: :post %>
+  <% end %>
+
+
+
 
   <%= link_to 'Edit', edit_article_path(@article) %> |
   <%= link_to 'Back', articles_path %>

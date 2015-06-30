@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
+    @like = @article.like_for(current_user)
     @vote = @article.vote_for(current_user)
   end
 
@@ -50,7 +52,6 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-
   private
 
   # Prevent users from accessing this method
@@ -61,6 +62,10 @@ class ArticlesController < ApplicationController
 
   def find_article
     @article = Article.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :image, :email, :password, :password_confirmation)
   end
 
 

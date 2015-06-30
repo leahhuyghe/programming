@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-
-  
-
   root 'welcome#index'
 
   resources :articles do
     resources :comments
     resources :votes, only: [:create, :destroy, :update]
+    resources :likes, only: [:create, :destroy]
   end
 
   resources :users, only: [:new, :create]
@@ -15,9 +13,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-
-
-
-
 
 end

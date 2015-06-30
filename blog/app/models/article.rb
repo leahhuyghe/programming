@@ -12,8 +12,27 @@ class Article < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :voting_users, through: :votes, source: :user
 
+
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
+
   def vote_for(user)
     votes.find_by_user_id(user)
+  end
+
+
+    def liked_by?(user)
+    # likes will give all the likes objects to the current question record
+    # it's the same as calling `self.likes`
+    # we filter those likes by a spacific by simply passing the user: user
+    # option in the where function
+    # the present? will give true if there is at least one element returned
+    # and will return false if there are no elements
+    likes.where(user: user).present?
+  end
+
+  def like_for(user)
+    likes.find_by(user: user)
   end
 
 end
