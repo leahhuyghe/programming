@@ -1,47 +1,71 @@
 $(document).ready(function() {
 
+  var UPDATE_INTERVAL = 2000; // ms between updates.
 
   var bodyField = $('textarea');
 
-  var addMessage = function (body) {
-    $('ul').prepend('<li>' + body + '</li>');
+
+  var renderMessage = function (msg) {
+    var html = '<li data-message-id="' + msg.id + '">' + msg.body + '<i>x</i></li>';
+    return html;
+  };
+
+  var addMessage = function (msg) {
+    var html = renderMessage(msg);
+    $('ul').prepend(html);
   };
 
   var isPresent = function (string) {
-    return string.trim().length > 0; // trim takes away spaces from the beginning and the end
+    return string.trim().length > 0;
   };
 
   var refreshMessages = function () {
-    $('ul').html('');
-    $.get('/messages', function (data) {
-      for (var i = 0; i < data.length; i += 1) {
-        var msg = data[i];
-        addMessage(msg.body);
-      };
+    $.get('/messages', function (messages) {
+      $('ul').html('');
+
+      for (var i = 0; i < messages.length; i += 1) {
+        addMessage(messages[i]);
+      }
     });
   };
 
   var saveMessage = function (body) {
-    $.post('/mesages', {body: body});
+    $.post('/messages', {body: body}, refreshMessages);
   };
 
-  $('form').submit(function(event){
+  $('form').submit(function(event) {
     event.preventDefault();
-      var body = bodyField.val();
+    var body = bodyField.val();
 
-      bodyField.focus();
+    bodyField.focus();
 
-      if (isPresent(body)) { //if the body length is greater than 0,
-        bodyField.val('');
-        addMessage(body); //refocus the textarea
-        refreshMessages(); //add messages to the page and remove existing msgs
-        $.post('/messages', {body: body});
+    if (isPresent(body)) {
+      bodyField.val('');
+      saveMessage(body);
+    }
 
-  };
+  });
 
-      });
-    refreshMessages();
+  refreshMessages();
 
-// setInterval(refreshMessages, 2000);
+  setInterval(refreshMessages, UPDATE_INTERVAL);
+
+  $(document).on('click', 'i', function() {
+    var listItem = $(this).parent();
+
+    listItem.slideUp();
+
+    var id = listItem.data('message-id');
+
+    $.ajax({
+      url: '/messages/' + id,
+      method: 'DELETE'
+    });
+
+  });
+
+
+  // TODO: Submit when the enter key is pressed.
+
 
 });
