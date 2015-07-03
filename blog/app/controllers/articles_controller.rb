@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @like = @article.like_for(current_user)
     @vote = @article.vote_for(current_user)
+    @favourite = @article.favourite_for(current_user)
   end
 
   def new

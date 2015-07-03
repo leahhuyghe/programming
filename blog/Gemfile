@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.10'
 gem 'hirb'
 
 gem 'mini_magick'
+gem "rails-erd"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

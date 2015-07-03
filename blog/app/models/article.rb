@@ -12,7 +12,8 @@ class Article < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :voting_users, through: :votes, source: :user
 
-
+  has_many :favourites, dependent: :destroy
+  has_many :favourited_users, through: :favourites, source: :user
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
@@ -34,5 +35,10 @@ class Article < ActiveRecord::Base
   def like_for(user)
     likes.find_by(user: user)
   end
+
+  def favourite_for(user)
+    favourites.find_by_user_id(user)
+  end
+
 
 end

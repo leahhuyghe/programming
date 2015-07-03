@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :liked_articles, through: :likes, source: :article
 
+  has_many :favourites, dependent: :destroy
+  has_many :favourited_articles, through: :favourites 
+
 end

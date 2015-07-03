@@ -62,10 +62,15 @@
     <%= link_to "Like", article_likes_path(@article), method: :post %>
   <% end %>
 
-
-
-
   <%= link_to 'Edit', edit_article_path(@article) %> |
   <%= link_to 'Back', articles_path %>
+
+  <% if @article.favourited_by?(current_user) %>
+    <%= link_to "Un-Favourite", article_favourite_path(@article, @favourite),
+                method: :delete  %>
+  <% else %>
+    <%= link_to "Favourite", article_favourites_path(@article), method: :post %>
+  <% end %>
+
 
 </div>
